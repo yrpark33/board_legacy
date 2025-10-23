@@ -1,0 +1,19 @@
+package org.oolong.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+import org.oolong.dto.BoardDTO;
+
+public interface BoardMapper {
+	
+	int insert(BoardDTO dto);
+	BoardDTO selectOne(Long bno);
+	int delete(Long bno);
+	int update(BoardDTO boardDTO);
+	List<BoardDTO> list();
+	List<BoardDTO> list2(@Param("skip") int skip, @Param("count") int count);
+	int listCount();
+	List<BoardDTO> listSearch(@Param("skip") int skip, @Param("count") int count, @Param("types") String[] types, @Param("keyword") String keyword);
+	int listCountSearch(@Param("types") String[] types, @Param("keyword") String keyword);
+}
