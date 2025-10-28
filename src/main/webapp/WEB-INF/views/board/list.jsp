@@ -40,7 +40,7 @@
 							<c:forEach var="board" items="${dto.boardDTOList}">
 								<tr data-bno="${board.bno}">
 									<td><c:out value='${board.bno}'/></td>
-									<td><a href="/board/read/${board.bno}"><c:out value='${board.title}'/></a></td>
+									<td><a href="/board/read/${board.bno}"><c:out value='${board.title}'/></a><b style="color:blue"> [ <c:out value="${board.replyCnt}"/> ]</b></td>
 									<td><c:out value='${board.writer}'/></td>
 									<td><c:out value='${board.createdDate}'/></td>
 								</tr>
@@ -141,7 +141,7 @@
 			self.location = `/board/list?\${params.toString()}`
 			
 			
-		})
+		})	
 		
 		document.querySelector('.searchBtn').addEventListener('click', (e) => {
 			const keyword = document.querySelector("input[name='keywordInput']").value
