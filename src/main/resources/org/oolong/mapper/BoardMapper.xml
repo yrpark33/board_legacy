@@ -55,12 +55,13 @@
 	</sql>
 	
 	<select id="listSearch" resultType="BoardDTO">
-		select bno, title, writer, regDate
-		from tbl_board
-		where delFlag = false
+		select board.bno, title, writer, board.regDate, count(rno) replyCnt
+		from tbl_board board left outer join tbl_reply reply on board.bno = reply.bno
+		where board.delFlag = false
 			
 		<include refid="search"></include>
-			
+		
+		group by board.bno
 		order by bno desc
 		limit #{count} offset #{skip}
 	</select>

@@ -21,6 +21,7 @@ public class BoardDTO {
 	private LocalDateTime regDate;
 	private LocalDateTime updateDate;
 	private boolean delFlag;
+	private int replyCnt;
 	
 	
 	public String getCreatedDate() {

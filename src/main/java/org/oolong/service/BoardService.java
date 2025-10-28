@@ -24,7 +24,7 @@ public class BoardService {
 	public BoardListPagingDTO getList(int page, int size, String typeStr, String keyword) {
 		
 		page = page <= 0 ? 1 : page;
-		size = (size > 100 || size < 10) ? 10 : size;
+		size = (size >= 100 || size < 10) ? 10 : size;
 		
 		int skip = (page - 1) * size;
 		
