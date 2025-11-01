@@ -6,11 +6,16 @@
 		<div class="col-lg-12">
 			<div class="card shadow mt-3 mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">Board List</h6>
+					<h6 class="m-0 fw-bold text-primary">Board List</h6>
 				</div>
 				<div class="card-body">
 					
-					<div class="d-flex justify-content-end" style="margin-bottom: 2em">
+					<div class="d-flex justify-content-between" style="margin-bottom: 2em">
+						
+						<div style="width: 20%;" class="d-flex">
+							<a href="/board/register"><button type="button" class="btn btn-primary btn-lg">글쓰기</button></a> 
+						</div>
+						
 						<div style="width: 50%;" class="d-flex">
 							<select name="typeSelect" class="form-select form-control me-2">
 								<option value="">---</option>

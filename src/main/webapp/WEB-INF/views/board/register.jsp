@@ -5,7 +5,7 @@
 		<div class="col-lg-12">
 			<div class="card shadow mt-3 mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">Board Register</h6>
+					<h6 class="m-0 fw-bold text-primary">Board Register</h6>
 				</div>
 				<div class="card-body">
 					<form action="/board/register" method="post" class="p-3">
@@ -26,7 +26,8 @@
 						</div>
 						
 						<div class="d-flex justify-content-end">
-							<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+							<button type="submit" class="btn btn-primary btn-lg me-2">등록</button>
+							<a href="/board/list"><button type="button" class="btn btn-warning btn-lg">취소</button></a>
 						</div>
 					</form>
 				</div>
