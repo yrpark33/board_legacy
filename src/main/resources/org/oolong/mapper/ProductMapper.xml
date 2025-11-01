@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="org.oolong.mapper.ProductMapper">
+ 	<insert id="insert">
+ 		<selectKey order="AFTER" keyProperty="pno" resultType="int">
+ 			select LAST_INSERT_ID()
+ 		</selectKey>
+ 		insert into tbl_product(pname, pdesc, price, sale, writer)
+ 		values (#{pname}, #{pdesc}, #{price}, true, #{writer})
+ 	</insert>
+ 	
+ 	
+ 	<insert id="insertImages">
+ 			insert into tbl_product_image(pno, fileName, uuid, ord)
+ 			values
+ 			
+ 			<foreach collection="imageList" item="image" separator=", ">
+ 				(#{pno}, #{image.fileName}, #{image.uuid}, #{image.ord})
+ 			</foreach>
+ 			
+ 	</insert>
+ 	
+ 	<resultMap type="ProductDTO" id="selectMap">
+ 		<id property="pno" column="pno" />
+ 		<result property="pname" column="pname" />
+ 		<result property="pdesc" column="pdesc" />
+ 		<result property="price" column="price" />
+ 		<result property="writer" column="writer" />
+ 		<result property="sale" column="sale" />
+ 		
+ 		<collection property="imageList" ofType="ProductImageDTO">
+ 			<id property="ino" column="ino" />
+ 			<result property="fileName" column="fileName" />
+ 			<result property="uuid" column="uuid" />
+ 			<result property="ord" column="ord" />
+ 		</collection>
+ 		
+ 	</resultMap>
+ 	
+ 	<select id="selectOne" resultMap="selectMap">
+ 		select p.pno, pname, pdesc, price, sale, writer, ino, fileName, uuid, ord
+ 		from tbl_product p left outer join tbl_product_image pimg on p.pno = pimg.pno
+ 		where p.pno = #{pno} order by ord
+ 	</select>
+ 	
+ 	<update id="deleteOne">
+ 		update tbl_product set sale = false where pno = #{pno}
+ 	</update>
+ 	
+ 	<delete id="deleteImages">
+ 		delete from tbl_product_image where pno = #{pno}
+ 	</delete>
+ 	
+ 	<update id="updateOne">
+ 		update tbl_product
+ 			set pname = #{pname},
+ 				pdesc = #{pdesc},
+ 				price = #{price}
+ 		where pno = #{pno}
+ 	</update>
+ 	
+ 	<select id="list" resultType="ProductListDTO">
+ 		select p.pno, pname, price, writer, sale, fileName, uuid
+ 		from tbl_product p left outer join tbl_product_image pimg on p.pno = pimg.pno
+ 		where ord = 0
+ 		order by p.pno desc
+ 		limit #{count} offset #{skip}
+ 	</select>
+ 	
+ 	<select id="listCount">
+ 		select count(pno) from tbl_product;
+ 	</select>
+ 	
+ </mapper>

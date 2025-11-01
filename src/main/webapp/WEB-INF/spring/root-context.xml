@@ -51,4 +51,6 @@
 	
 	<tx:annotation-driven />
 	
+	<context:property-placeholder location="classpath:config.properties" />
+	
 </beans>
