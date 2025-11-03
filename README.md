@@ -31,4 +31,4 @@ DB 스키마 파일 위치:
    - Apache **Tomcat 10** 서버에 배포 및 실행합니다.
 
 4. **접속 확인**  
-   - 브라우저에서 http://localhost:8080/board/list(게시판) 또는 http://localhost:8080/product/list(상품) 에 접속하여 메인화면을 확인합니다.
+   - 브라우저에서 http://localhost:8080/board/list 또는 http://localhost:8080/product/list 에 접속하여 메인화면을 확인합니다.
