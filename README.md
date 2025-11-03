@@ -2,7 +2,7 @@ Spring Legacy 기반으로 구현한 CRUD 게시판 프로젝트입니다.
 게시글 CRUD, 댓글 비동기(AJAX) 처리, 첨부파일 업로드 기능을 포함하며  
 MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했습니다.
 
-
+<hr/>
 
 **기술 스택**
 - **Language**: Java 17  
@@ -12,6 +12,7 @@ MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했
 - **Server**: Apache Tomcat 10.1.44
 - **Tools**: Eclipse, Maven
 
+<hr>
 
 **실행방법**
 
@@ -30,6 +31,7 @@ MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했
 4. **접속 확인**  
    - 브라우저에서 http://localhost:8080/board/list 또는 http://localhost:8080/product/list 에 접속하여 메인화면을 확인합니다.
   
+<hr>
 
 **UI 템플릿**  
 https://startbootstrap.com/template/sb-admin  
