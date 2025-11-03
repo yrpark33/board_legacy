@@ -6,16 +6,14 @@
 		<div class="col-lg-12">
 			<div class="card shadow mt-3 mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 fw-bold text-primary">Board List</h6>
+					<h6 class="m-0 fw-bold text-primary">게시판</h6>
 				</div>
 				<div class="card-body">
 					
 					<div class="d-flex justify-content-between" style="margin-bottom: 2em">
-						
 						<div style="width: 20%;" class="d-flex">
-							<a href="/board/register"><button type="button" class="btn btn-primary btn-lg">글쓰기</button></a> 
+							<a href="/board/register"><button type="button" class="btn btn-primary">글쓰기</button></a>
 						</div>
-						
 						<div style="width: 50%;" class="d-flex">
 							<select name="typeSelect" class="form-select form-control me-2">
 								<option value="">---</option>
@@ -27,7 +25,7 @@
 								<option value="TCW" ${dto.types == 'TCW' ? 'selected' : ''}>제목 OR 내용 OR 작성자</option>
 							</select>
 							<input type="text" name="keywordInput" class="form-control me-2" value="<c:out value='${dto.keyword}'/>" />
-							<button class="btn btn-outline-info searchBtn">Search</button>
+							<button class="btn btn-outline-info searchBtn" style="white-space: nowrap;">검색</button>
 						</div>
 					</div>
 				
@@ -35,10 +33,10 @@
 					<table class="table table-bordered" id="dataTable">
 						<thead>
 							<tr>
-								<th>Bno</th>
-								<th>Title</th>
-								<th>Writer</th>
-								<th>RegDate</th>
+								<th>번호</th>
+								<th>제목</th>
+								<th>작성자</th>
+								<th>작성일</th>
 							</tr>
 						</thead>
 						<tbody class="tbody">
@@ -56,13 +54,13 @@
 					<div class="d-flex justify-content-center">
 						<ul class="pagination">
 							<c:if test="${dto.prev}">
-								<li class="page-item"><a class="page-link" href="${dto.start - 1}" tabindex="-1">Previous</a></li>
+								<li class="page-item"><a class="page-link" href="${dto.start - 1}" tabindex="-1">이전</a></li>
 						    </c:if>
 						    <c:forEach var="num" items="${dto.pageNums}">
 						    	<li class="page-item ${dto.page == num ? 'active' : ''}"><a class="page-link" href="${num}">${num}</a></li>
 						    </c:forEach>
 						    <c:if test="${dto.next}">
-						    	<li class="page-item"><a class="page-link" href="${dto.end + 1}">Next</a></li>
+						    	<li class="page-item"><a class="page-link" href="${dto.end + 1}">다음</a></li>
 							</c:if>
 						</ul>
 					</div>
