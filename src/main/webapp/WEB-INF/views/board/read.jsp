@@ -6,39 +6,39 @@
 		<div class="col-lg-12">
 			<div class="card shadow mt-3 mb-4">
 				<div class="card-header py-3">
-					<h6 class="m-0 fw-bold text-primary">Board Read</h6>
+					<h6 class="m-0 fw-bold text-primary">게시물 조회</h6>
 				</div>
 				<div class="card-body">
 				
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">Bno</span>
+						<span class="input-group-text">번호</span>
 						<input type="text" class="form-control" value="<c:out value='${board.bno}'/>" readonly />
 					</div>
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">Title</span>
+						<span class="input-group-text">제목</span>
 						<input type="text" class="form-control" value="<c:out value='${board.title}'/>" readonly />
 					</div>
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">Content</span>
+						<span class="input-group-text">내용</span>
 						<textarea class="form-control" rows="3" readonly><c:out value="${board.content}"/></textarea>
 					</div>
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">Writer</span>
+						<span class="input-group-text">작성자</span>
 						<input type="text" class="form-control" value="<c:out value='${board.writer}'/>" readonly />
 					</div>
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">RegDate</span>
+						<span class="input-group-text">작성일</span>
 						<input type="text" class="form-control" value="<c:out value='${board.createdDate}'/>" readonly />
 					</div>
 					
 					<div class="float-end">
 						<a href="/board/list" class="btn">
-							<button type="button" class="btn btn-info btnList">LIST</button>
+							<button type="button" class="btn btn-info btnList">목록</button>
 						</a>
 						
 						<c:if test="${!board.delFlag}">
 							<a href="/board/modify/${board.bno}" class="btn">
-								<button type="button" class="btn btn-warning btnModify">MODIFY</button>
+								<button type="button" class="btn btn-warning btnModify">수정/삭제</button>
 							</a>
 						</c:if>
 					</div>
@@ -54,17 +54,17 @@
 					<input type="hidden" name="bno" value="<c:out value='${board.bno}'/>"/>
 					
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">Replier</span>
+						<span class="input-group-text">댓글 작성자</span>
 						<input type="text" class="form-control" name="replier" required/>
 					</div>
 					
 					<div class="mb-3 input-group input-group-lg">
-						<span class="input-group-text">ReplyText</span>
+						<span class="input-group-text">댓글 내용</span>
 						<textarea class="form-control" name="replyText" rows="3" required></textarea>
 					</div>
 					
 					<div class="text-end">
-						<button type="submit" class="btn btn-primary addReplyBtn">Submit Reply</button>
+						<button type="submit" class="btn btn-primary addReplyBtn">등록</button>
 					</div>
 					
 				</form>
