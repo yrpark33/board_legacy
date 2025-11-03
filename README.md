@@ -13,19 +13,10 @@ MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했
 - **Tools**: Eclipse, Maven
 
 
-
-UI 템플릿: https://startbootstrap.com/template/sb-admin 
-화면 구성은 해당 템플릿을 일부 수정하여 사용하였으며, 
-코드 중심 저장소를 유지하기 위해 .gitattributes로 대용량 리소스는 제외하였습니다.
-
-
-
-DB 스키마 파일 위치:  
-`src/main/resources/schema.sql`
-
 **실행방법**
 
-1. **MariaDB 데이터베이스 생성**  
+1. **MariaDB 데이터베이스 생성**
+   - DB 스키마 파일 위치:  `src/main/resources/schema.sql`  
    - `schema.sql` 파일을 실행하여 테이블 구조를 생성합니다.
 
 2. **DB 접속 정보 수정**  
@@ -38,3 +29,8 @@ DB 스키마 파일 위치:
 
 4. **접속 확인**  
    - 브라우저에서 http://localhost:8080/board/list 또는 http://localhost:8080/product/list 에 접속하여 메인화면을 확인합니다.
+  
+
+UI 템플릿: https://startbootstrap.com/template/sb-admin  
+화면 구성은 해당 템플릿을 일부 수정하여 사용하였으며,  
+코드 중심 저장소를 유지하기 위해 .gitattributes로 대용량 리소스는 제외하였습니다.
