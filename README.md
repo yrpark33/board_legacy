@@ -31,6 +31,7 @@ MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했
    - 브라우저에서 http://localhost:8080/board/list 또는 http://localhost:8080/product/list 에 접속하여 메인화면을 확인합니다.
   
 
-UI 템플릿: https://startbootstrap.com/template/sb-admin  
+**UI 템플릿**  
+https://startbootstrap.com/template/sb-admin  
 화면 구성은 해당 템플릿을 일부 수정하여 사용하였으며,  
 코드 중심 저장소를 유지하기 위해 .gitattributes로 대용량 리소스는 제외하였습니다.
