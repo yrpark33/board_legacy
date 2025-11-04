@@ -23,14 +23,19 @@ MVC 아키텍처와 트랜잭션, 예외 처리 구조를 학습하고 적용했
 2. **DB 접속 정보 수정**  
    - `src/main/webapp/WEB-INF/spring/root-context.xml` 파일에서  
      `<bean id="dataSource">` 부분의 URL, username, password를  
-     실제 DB 환경에 맞게 수정합니다.
+     실제 DB 환경에 맞게 수정합니다.  
+          
+3. **첨부파일 업로드 경로 생성**
+   - `config.properties` 또는 `FileService` 내 업로드 경로 설정값을 확인하세요.  
 
-3. **서버 실행**  
+4. **서버 실행**  
    - Apache **Tomcat 10** 서버에 배포 및 실행합니다.
 
-4. **접속 확인**  
+5. **접속 확인**  
    - 브라우저에서 http://localhost:8080/board/list 또는 http://localhost:8080/product/list 에 접속하여 메인화면을 확인합니다.
-  
+
+
+
 <hr>
 
 **UI 템플릿**  
